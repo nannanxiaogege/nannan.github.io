@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/05/11/vue_build/menu.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/05/11/vue_build/menu2.jpg">
-<meta property="og:updated_time" content="2019-05-11T08:36:50.875Z">
+<meta property="og:updated_time" content="2019-05-12T02:47:57.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-cli3.0 打包遇到问题总结">
 <meta name="twitter:description" content="vue-cli3.0以后版本打包问题总结：最近一个依赖vue-cli的项目写完后，准备打包发布，习惯性的去找 vue.config.js文件准备配置打包，突然发现项目中没有这个文件（脚手架的版本是vue-cli3.0）。然后在官网找发现： 官方是这样说的。vue.config.js 是一个可选的配置文件，如果项目的 (和 package.json 同级的) 根目录中存在这个文件，那么它会被 @vu">
@@ -91,7 +91,7 @@
 <h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><pre><code>一：在项目目录的根目录创建vue.config.js文件
 </code></pre><p>vue.config.js(vue-cli3.0是不自带这个文件的，需要自己创建，与项目的package.json文件平级)<br><img src="/2019/05/11/vue_build/menu.jpg" alt="avatar"></p>
 <pre><code>二：对vue.config.js文件进行配置
-</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    baseUrl:"./",//输出的根路径  默认是/ </span><br><span class="line">    outputDir:'dist',//构建输出目录</span><br><span class="line">    assetsDir:'assets',//静态资源目录(js,css,img,fonts)</span><br><span class="line">    lintOnSave:false,//是否开启eslint保存检测,有效值: true || false || 'error'</span><br><span class="line">    devServer:&#123;</span><br><span class="line">        open:true,//是否自动弹出</span><br><span class="line">        host:'localhost',</span><br><span class="line">        port:8081,//端口</span><br><span class="line">        https:false,</span><br><span class="line">        hotOnly:false,//热更新</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    baseUrl:"./",//输出的根路径  默认是/ </span><br><span class="line">    outputDir:'dist',//构建输出目录</span><br><span class="line">    assetsDir:'',//静态资源目录(js,css,img,fonts)</span><br><span class="line">    lintOnSave:false,//是否开启eslint保存检测,有效值: true || false || 'error'</span><br><span class="line">    devServer:&#123;</span><br><span class="line">        open:true,//是否自动弹出</span><br><span class="line">        host:'localhost',</span><br><span class="line">        port:8081,//端口</span><br><span class="line">        https:false,</span><br><span class="line">        hotOnly:false,//热更新</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">baseUrl:&quot;./&quot;       //输出的根路径  默认是/     如果想要build的包在当前目录</span><br><span class="line">必须使用&quot;./&quot;</span><br></pre></td></tr></table></figure></div></p>
 <pre><code>三：使用npm run build 进行打包
 </code></pre><p>打包后目录中会产生 dist文件，文件中index.html能够直接打开，则说明打包成功<br><img src="/2019/05/11/vue_build/menu2.jpg" alt="avatar"></p>
@@ -108,6 +108,15 @@
     
 <nav id="article-nav">
   <div class="article-nav-block">
+    
+      <a href="/2019/05/12/CordovaBuildApp/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            <div>没有了</div>
+          
+        </div>
+      </a>
     
   </div>
   <div class="article-nav-block">
@@ -180,6 +189,10 @@ gitment.render('gitmentContainer')
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/05/12/CordovaBuildApp/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2019/05/11/vue_build/">vue-cli3.0 打包遇到问题总结</a>
