@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>跨域 | 楠楠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="跨域什么是跨域从前端领域来说，我的页面在a域名下存放，我页面js代码想访问b域名下的服务器，并进行数据交互，就存在跨域问题（从a域跨往b域）导致不能正常请求数据。 形成跨域的原因同源策略，它是由Netscape提出的一个著名的安全策略。现在所有支持JavaScript 的浏览器都会使用这个策略。所谓同源是指，域名，协议，端口相同。同源策略是浏览器的行为，是为了保护本地数据不被JavaScript代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="http://yoursite.com/2019/07/20/19.07.20/index.html">
+<meta property="og:site_name" content="楠楠的博客">
+<meta property="og:description" content="跨域什么是跨域从前端领域来说，我的页面在a域名下存放，我页面js代码想访问b域名下的服务器，并进行数据交互，就存在跨域问题（从a域跨往b域）导致不能正常请求数据。 形成跨域的原因同源策略，它是由Netscape提出的一个著名的安全策略。现在所有支持JavaScript 的浏览器都会使用这个策略。所谓同源是指，域名，协议，端口相同。同源策略是浏览器的行为，是为了保护本地数据不被JavaScript代">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-20T09:56:12.036Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域">
+<meta name="twitter:description" content="跨域什么是跨域从前端领域来说，我的页面在a域名下存放，我页面js代码想访问b域名下的服务器，并进行数据交互，就存在跨域问题（从a域跨往b域）导致不能正常请求数据。 形成跨域的原因同源策略，它是由Netscape提出的一个著名的安全策略。现在所有支持JavaScript 的浏览器都会使用这个策略。所谓同源是指，域名，协议，端口相同。同源策略是浏览器的行为，是为了保护本地数据不被JavaScript代">
+  
+    <link rel="alternate" href="/atom.xml" title="楠楠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-19.07.20" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      跨域
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/20/19.07.20/" class="article-date">
+  <time datetime="2019-07-20T09:53:32.899Z" itemprop="datePublished">2019-07-20</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>从前端领域来说，我的页面在a域名下存放，我页面js代码想访问b域名下的服务器，并进行数据交互，就存在跨域问题（从a域跨往b域）导致不能正常请求数据。</p>
+<h2 id="形成跨域的原因"><a href="#形成跨域的原因" class="headerlink" title="形成跨域的原因"></a>形成跨域的原因</h2><p>同源策略，它是由Netscape提出的一个著名的安全策略。<br>现在所有支持JavaScript 的浏览器都会使用这个策略。<br>所谓同源是指，域名，协议，端口相同。<br>同源策略是浏览器的行为，是为了保护本地数据不被JavaScript代码获取回来的数据污染，因此拦截的是客户端发出的请求回来的数据接收，即请求发送了，服务器响应了，但是无法被浏览器接收。</p>
+<h2 id="为什么要跨域"><a href="#为什么要跨域" class="headerlink" title="为什么要跨域"></a>为什么要跨域</h2><p>从一个域名去请求另外一个域名的资源。即跨域名请求！<br>现实工作开发中经常会有跨域的情况，因为公司会有很多项目，也会有很多子域名，各个项目或者网站之间需要相互调用对方的资源，避免不了跨域请求。</p>
+<h2 id="跨域解决方案"><a href="#跨域解决方案" class="headerlink" title="跨域解决方案"></a>跨域解决方案</h2><h6 id="JSONP解决跨域"><a href="#JSONP解决跨域" class="headerlink" title="JSONP解决跨域"></a>JSONP解决跨域</h6><p>JSONP的原生API简单实现<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//展示方法,打印跨域数据</span></span><br><span class="line"><span class="keyword">var</span> show = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//原生jsonp简单实现,动态添加script引用</span></span><br><span class="line"><span class="keyword">var</span> jsonp = <span class="function"><span class="keyword">function</span>(<span class="params">url,callback</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> jsonpScript=<span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">  jsonpScript.setAttribute(<span class="string">'src'</span>, <span class="string">`<span class="subst">$&#123;url&#125;</span>&amp;callback=<span class="subst">$&#123;callback&#125;</span>`</span>);</span><br><span class="line">  <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(jsonpScript);</span><br><span class="line">&#125;</span><br><span class="line">jsonp(<span class="string">"https://api.douban.com/v2/book/search?q=json&amp;count=1"</span>,<span class="string">"show"</span>)</span><br></pre></td></tr></table></figure></div></p>
+<p>示例-调用豆瓣的API接口(Jquery方式)<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//展示方法,打印跨域数据</span></span><br><span class="line"><span class="keyword">var</span> show = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 远端调用豆瓣API接口 callback参数指定了返回数据调用的回调函数的名称</span></span><br><span class="line"><span class="comment"> * jsonCallback:show 指定jsonCallback会在请求路径中添加callback参数 例如:</span></span><br><span class="line"><span class="comment"> *  https://api.douban.com/v2/book/search?q=json&amp;count=1&amp;callback=show</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">"https://api.douban.com/v2/book/search?q=json&amp;count=1"</span>,</span><br><span class="line">    type:<span class="string">"GET"</span>,</span><br><span class="line">    dataType:<span class="string">"jsonp"</span>,</span><br><span class="line">    jsonpCallback:<span class="string">"show"</span>,</span><br><span class="line">    sunccess:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div></p>
+<p>vue解决跨域的方法<br>1、打开config/index.js,在proxyTable中添写如下代码：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proxyTable: &#123; </span><br><span class="line">  <span class="string">'/api'</span>: &#123;  <span class="comment">//使用"/api"来代替"http://f.apiplus.c" </span></span><br><span class="line">    target: <span class="string">'http://f.apiplus.cn'</span>, <span class="comment">//源地址 </span></span><br><span class="line">    changeOrigin: <span class="literal">true</span>, <span class="comment">//改变源 </span></span><br><span class="line">    pathRewrite: &#123; </span><br><span class="line">      <span class="string">'^/api'</span>: <span class="string">'http://f.apiplus.cn'</span> <span class="comment">//路径重写 </span></span><br><span class="line">      &#125; </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>2、使用axios请求数据时直接使用“/api”：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getData () &#123; </span><br><span class="line"> axios.get(<span class="string">'/api/bj11x5.json'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123; </span><br><span class="line">   <span class="built_in">console</span>.log(res) </span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure></div></p>
+<p>通过这种方法去解决跨域，打包部署时还按这种方法会出问题。解决方法如下：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> serverUrl = <span class="string">'/api/'</span>  <span class="comment">//本地调试时 </span></span><br><span class="line"><span class="comment">// let serverUrl = 'http://f.apiplus.cn/'  //打包部署上线时 </span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123; </span><br><span class="line">  dataUrl: serverUrl + <span class="string">'bj11x5.json'</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<h6 id="websocket长链接自带跨域能力"><a href="#websocket长链接自带跨域能力" class="headerlink" title="websocket长链接自带跨域能力"></a>websocket长链接自带跨域能力</h6><h6 id="通过nodejs代理服务器解决跨域问题"><a href="#通过nodejs代理服务器解决跨域问题" class="headerlink" title="通过nodejs代理服务器解决跨域问题"></a>通过nodejs代理服务器解决跨域问题</h6><h6 id="跨域资源共享（CORS）"><a href="#跨域资源共享（CORS）" class="headerlink" title="跨域资源共享（CORS）"></a>跨域资源共享（CORS）</h6><p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+<p>参考阮一峰文章：<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">添加链接描述</a></p>
+<h6 id="与JSONP的比较"><a href="#与JSONP的比较" class="headerlink" title="与JSONP的比较"></a>与JSONP的比较</h6><p>CORS与JSONP的使用目的相同，但是比JSONP更强大。</p>
+<p>JSONP只支持GET请求，CORS支持所有类型的HTTP请求。JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。</p>
+<h6 id="iframe-解决跨域问题"><a href="#iframe-解决跨域问题" class="headerlink" title="iframe 解决跨域问题"></a>iframe 解决跨域问题</h6>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/06/18/19.06.18/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">HTML5新特性</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        楠楠小哥哥
+      
+    </h3>
+    <p class="avatar-slogan">
+      耐撕小前端，学习写代码。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/20/19.07.20/">跨域</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/18/19.06.18/">HTML5新特性</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/12/19.05,12-1/">cordova打包vue项目成Android手机app包</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/19.05.12-2/">vue-cli3.0 打包遇到问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/24/19.04.24/">命令行工具对文件进行打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 nannan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
