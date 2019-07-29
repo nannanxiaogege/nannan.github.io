@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>cordova打包vue项目成Android手机app包 | 楠楠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="cordova打包vue项目成Android手机app包使用cordova打包的好处：Cordova是一个用基于HTML、CSS和JavaScript的，用于创建跨平台移动应用程序的快速开发平台。它使开发者能够利用iPhone、Android、等智能手机的核心功能——包括地理定位、加速器、联系人、声音和振动等，此外Cordova拥有丰富的插件，可以调用。 准备工作： Android打包环境配置：总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cordova打包vue项目成Android手机app包">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/19.05.12-1/index.html">
+<meta property="og:site_name" content="楠楠的博客">
+<meta property="og:description" content="cordova打包vue项目成Android手机app包使用cordova打包的好处：Cordova是一个用基于HTML、CSS和JavaScript的，用于创建跨平台移动应用程序的快速开发平台。它使开发者能够利用iPhone、Android、等智能手机的核心功能——包括地理定位、加速器、联系人、声音和振动等，此外Cordova拥有丰富的插件，可以调用。 准备工作： Android打包环境配置：总">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/05/12/19.05.12-1/Cordava1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/12/19.05.12-1/Cordava2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/12/19.05.12-1/Cordava3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/12/19.05.12-1/url.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/12/19.05.12-1/Cordava4.jpg">
+<meta property="og:updated_time" content="2019-05-12T05:26:21.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cordova打包vue项目成Android手机app包">
+<meta name="twitter:description" content="cordova打包vue项目成Android手机app包使用cordova打包的好处：Cordova是一个用基于HTML、CSS和JavaScript的，用于创建跨平台移动应用程序的快速开发平台。它使开发者能够利用iPhone、Android、等智能手机的核心功能——包括地理定位、加速器、联系人、声音和振动等，此外Cordova拥有丰富的插件，可以调用。 准备工作： Android打包环境配置：总">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/12/19.05.12-1/Cordava1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="楠楠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-19.05.12-1" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      cordova打包vue项目成Android手机app包
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/12/19.05.12-1/" class="article-date">
+  <time datetime="2019-05-12T03:43:07.961Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="cordova打包vue项目成Android手机app包"><a href="#cordova打包vue项目成Android手机app包" class="headerlink" title="cordova打包vue项目成Android手机app包"></a>cordova打包vue项目成Android手机app包</h1><h2 id="使用cordova打包的好处："><a href="#使用cordova打包的好处：" class="headerlink" title="使用cordova打包的好处："></a>使用cordova打包的好处：</h2><p>Cordova是一个用基于HTML、CSS和JavaScript的，用于创建跨平台移动应用程序的快速开发平台。它使开发者能够利用iPhone、Android、等智能手机的核心功能——包括地理定位、加速器、联系人、声音和振动等，此外Cordova拥有丰富的插件，可以调用。</p>
+<h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><ol>
+<li><p>Android打包环境配置：总的来说包括：jdk的安装和Java环境变量的设置、Android SDK的安装和环境变量的设置</p>
+</li>
+<li><p>node.js的安装</p>
+</li>
+<li><p>cordova的安装</p>
+<h2 id="打包详情："><a href="#打包详情：" class="headerlink" title="打包详情："></a>打包详情：</h2><p>1.初始化项目： cordova create hello com.example.hello HelloWorld<br><img src="/2019/05/12/19.05.12-1/Cordava1.jpg" alt="avatar"><br>2.切换到创建的文件夹，输入指令：cordova platform add android –save<br><img src="/2019/05/12/19.05.12-1/Cordava2.jpg" alt="avatar"><br>3.检查打包条件指令：cordova requirements<br><img src="/2019/05/12/19.05.12-1/Cordava3.jpg" alt="avatar"></p>
+<h4 id="修改vue项目"><a href="#修改vue项目" class="headerlink" title="修改vue项目"></a>修改vue项目</h4><p>4.首先修改vue项目的index.html</p>
+</li>
+</ol>
+<p>在body之间加入引入cordova.js<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"cordova.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- built files will be auto injected --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></div></p>
+<p>5在main.js里面添加vue-cordova包<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cordova --save</span><br></pre></td></tr></table></figure></div></p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueCorvova <span class="keyword">from</span> <span class="string">'vue-cordova'</span></span><br><span class="line">Vue.use(VueCorvova)</span><br></pre></td></tr></table></figure></div>
+<p>6.对vue项目进行打包<br>参考上篇打包教程：<a href="https://nannanxiaogege.github.io/2019/05/11/vue_build/" target="_blank" rel="noopener">vue-cli3.0以后版本打包问题</a>.</p>
+<p>7.执行完成后会生成一个dist文件夹，找到这个文件夹将里面的所有文件复制到的cordova项目的www文件夹下替换它原有的文件。</p>
+<h4 id="修改app的配置"><a href="#修改app的配置" class="headerlink" title="修改app的配置"></a>修改app的配置</h4><p>修改名字：在config.xml中的<name></name>标签中输入想要的名字。</p>
+<p>图标路径：找到路径一一替换<br>app\platforms\android\app\src\main\res<br><img src="/2019/05/12/19.05.12-1/url.jpg" alt="avatar"></p>
+<p>8.然后在cordova项目终端执行：cordova build android<br><img src="/2019/05/12/19.05.12-1/Cordava4.jpg" alt="avatar"></p>
+<p>打包成功，会在platforms\android\app\build\outputs\apk\debug\app-debug.apk生成Android的安装包app-debug.apk</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/06/18/19.06.18/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            HTML5新特性
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/05/11/19.05.12-2/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">vue-cli3.0 打包遇到问题总结</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        楠楠小哥哥
+      
+    </h3>
+    <p class="avatar-slogan">
+      耐撕小前端，学习写代码。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/20/19.07.20/">跨域</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/18/19.06.18/">HTML5新特性</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/12/19.05.12-1/">cordova打包vue项目成Android手机app包</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/19.05.12-2/">vue-cli3.0 打包遇到问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/24/19.04.24/">命令行工具对文件进行打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 nannan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
