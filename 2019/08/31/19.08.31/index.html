@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>前端，JS递归函数的使用 | 楠楠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="前端，JS递归函数的使用递归函数直接或间接调用函数本身，则该函数称为递归函数。 使用注意当自己调用自己，在函数体本身，调用结束，展开新的调用时间，要搞清楚边界定义条件，防止函数在递归过程中无休止的进行，必须在函数内有终止条件。 工作案例最近在工作中，项目需求需要将App中某个目录中所用图片上传，最开始，写一个for循环，遍历当前文件中所有照片文件，并在每次，循环后调用接口，进行上传（错误方法：js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端，JS递归函数的使用">
+<meta property="og:url" content="http://yoursite.com/2019/08/31/19.08.31/index.html">
+<meta property="og:site_name" content="楠楠的博客">
+<meta property="og:description" content="前端，JS递归函数的使用递归函数直接或间接调用函数本身，则该函数称为递归函数。 使用注意当自己调用自己，在函数体本身，调用结束，展开新的调用时间，要搞清楚边界定义条件，防止函数在递归过程中无休止的进行，必须在函数内有终止条件。 工作案例最近在工作中，项目需求需要将App中某个目录中所用图片上传，最开始，写一个for循环，遍历当前文件中所有照片文件，并在每次，循环后调用接口，进行上传（错误方法：js">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-31T14:38:04.797Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端，JS递归函数的使用">
+<meta name="twitter:description" content="前端，JS递归函数的使用递归函数直接或间接调用函数本身，则该函数称为递归函数。 使用注意当自己调用自己，在函数体本身，调用结束，展开新的调用时间，要搞清楚边界定义条件，防止函数在递归过程中无休止的进行，必须在函数内有终止条件。 工作案例最近在工作中，项目需求需要将App中某个目录中所用图片上传，最开始，写一个for循环，遍历当前文件中所有照片文件，并在每次，循环后调用接口，进行上传（错误方法：js">
+  
+    <link rel="alternate" href="/atom.xml" title="楠楠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-19.08.31" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      前端，JS递归函数的使用
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/31/19.08.31/" class="article-date">
+  <time datetime="2019-08-31T14:34:53.091Z" itemprop="datePublished">2019-08-31</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="前端，JS递归函数的使用"><a href="#前端，JS递归函数的使用" class="headerlink" title="前端，JS递归函数的使用"></a>前端，JS递归函数的使用</h1><h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><p>直接或间接调用函数本身，则该函数称为递归函数。</p>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><p>当自己调用自己，在函数体本身，调用结束，展开新的调用时间，要搞清楚边界定义条件，防止函数在递归过程中无休止的进行，必须在函数内有终止条件。</p>
+<h2 id="工作案例"><a href="#工作案例" class="headerlink" title="工作案例"></a>工作案例</h2><p>最近在工作中，项目需求需要将App中某个目录中所用图片上传，最开始，写一个for循环，遍历当前文件中所有照片文件，并在每次，循环后调用接口，进行上传（错误方法：js是单线程，在for循环中，每新开线程，进行上传调用，就会因为网络延迟等原因导致，上传方法未执行，for循环线程还在正常进行，最终导致线程阻塞。），后针对问题，想到利用递归函数，进行上传，每当上传成功一张图片，在上传成功的回调函数中，进行下次下一张图片的上传，以文件内图片的张数索引为指针，设置边界，当判断图片完全上传完，指针清0，结束递归，关闭进程，阻止循环无休止进行。<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历所有分钟级别图片</span></span><br><span class="line">	FindMinPhoto = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		MHCameraBridge.getFilesAtPath(<span class="string">'Min'</span>)</span><br><span class="line">			.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">				<span class="keyword">var</span> minArr = res.split(<span class="string">","</span>);</span><br><span class="line">				<span class="comment">// WorkPageHelp.addMyIMMessage('Text', '', '数据类型' + typeof res);</span></span><br><span class="line">				<span class="comment">// WorkPageHelp.addMyIMMessage('Text', '', '数据类型' + typeof minArr);</span></span><br><span class="line">				<span class="comment">//分钟级文件夹图片上传</span></span><br><span class="line">				<span class="keyword">this</span>.UpminPhoto(minArr)</span><br><span class="line">			&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//分钟级文件夹的照片上传</span></span><br><span class="line">	UpminPhoto = <span class="function">(<span class="params">PhotoArr</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="comment">// WorkPageHelp.addMyIMMessage('Text', '', '开始调用UpminPhoto()上传');</span></span><br><span class="line">		<span class="keyword">var</span> url = Sys.G_URLBASET + <span class="string">'xmidos/upload/uploadImage?accid='</span> + Sys.G_ACCID + <span class="string">'&amp;usrid='</span> + Param.G_USRID;</span><br><span class="line">		<span class="keyword">var</span> s = <span class="keyword">this</span>.state.minPhotoPath;</span><br><span class="line">		s = s.substring(<span class="number">0</span>, s.length - <span class="number">18</span>);</span><br><span class="line">		<span class="comment">// WorkPageHelp.addMyIMMessage('Text', '', 'ssssssssssssssssssssssssssssssssss'+s);</span></span><br><span class="line">		<span class="keyword">var</span> remotefilename = PhotoArr[<span class="keyword">this</span>.state.minPhotoNum];</span><br><span class="line">		<span class="keyword">var</span> localfilename = s + remotefilename;</span><br><span class="line">		<span class="comment">// if (Platform.OS === 'android') &#123;</span></span><br><span class="line">		<span class="comment">// 	localfilename = 'file://' + s + remotefilename;</span></span><br><span class="line">		<span class="comment">// &#125;</span></span><br><span class="line">		WorkPageHelp.addMyIMMessage(<span class="string">'Text'</span>, <span class="string">''</span>, <span class="string">'UpminPhoto()localfilename:'</span> + localfilename);</span><br><span class="line">		WorkPageHelp.addMyIMMessage(<span class="string">'Text'</span>, <span class="string">''</span>, <span class="string">'UpminPhoto()上传的remotefilename:'</span> + remotefilename);</span><br><span class="line">		WorkPageHelp.addMyIMMessage(<span class="string">'Text'</span>, <span class="string">''</span>, <span class="string">'UpminPhoto()url:'</span> + url);</span><br><span class="line">		Net.uploadOneFile(<span class="keyword">this</span>, url, localfilename, remotefilename, <span class="string">'effimage'</span>, <span class="keyword">this</span>.minUpSuccessCallback, <span class="keyword">this</span>.minUpErrorCallback);</span><br><span class="line">	&#125;</span><br><span class="line">	minUpSuccessCallback(parentwnd, code, message, data) &#123;</span><br><span class="line">		WorkPageHelp.addMyIMMessage(<span class="string">'Text'</span>, <span class="string">''</span>, <span class="string">'上传分钟图片文件夹第'</span> + parentwnd.state.minPhotoNum + <span class="string">'张照片'</span>);</span><br><span class="line">		RNMethod.log(<span class="string">'上传分钟图片文件夹第'</span> + parentwnd.state.minPhotoNum + <span class="string">'张照片'</span>);</span><br><span class="line">		<span class="comment">//判断指针长度是不是小于数组长度</span></span><br><span class="line">		<span class="keyword">if</span> (parentwnd.state.minPhotoNum &lt;= parentwnd.state.minPhotoPath.length) &#123;</span><br><span class="line">			<span class="comment">//指针加1，同时递归调用本身</span></span><br><span class="line">			parentwnd.state.minPhotoNum++;</span><br><span class="line">			parentwnd.UpminPhoto(PhotoArr)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			parentwnd.setState(&#123;</span><br><span class="line">				minPhotoNum: <span class="number">0</span>,</span><br><span class="line">			&#125;);</span><br><span class="line">			<span class="comment">//全部上传完，同时清空文件夹</span></span><br><span class="line">			parentwnd.deleteFile()</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	minUpErrorCallback(parentwnd, message) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'上传分钟图片文件夹照片错误'</span> + message)</span><br><span class="line">		WorkPageHelp.addMyIMMessage(<span class="string">'Text'</span>, <span class="string">''</span>, <span class="string">'上传分钟图片文件夹照片错误'</span> + message);</span><br><span class="line">		RNMethod.log(<span class="string">'上传分钟图片文件夹照片错误'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 删除文件</span></span><br><span class="line">	deleteFile() &#123;</span><br><span class="line">		MHCameraBridge.getFilesAtPath(<span class="string">'Min'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">			<span class="keyword">var</span> ssss = res.split(<span class="string">','</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ssss.length; i++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">					<span class="keyword">if</span> (path.indexOf(<span class="string">'.jpg'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">						MHCameraBridge.deleteFileOrFolder(<span class="string">'Min/'</span> + ssss[i]);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>代码中，调用很多原生java封装的方法，但实现思路主要为，在自己封装的Net.uploadOneFile（）上传方法的成功回调minUpSuccessCallback()中再次调用自身，用以实现递归，并在全局变量state中设置指针parentwnd.state.minPhotoNum++;作为边界，并作if判断，等于索引清0，结束函数递归，完成上传。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/07/20/19.07.20/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">跨域</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        楠楠小哥哥
+      
+    </h3>
+    <p class="avatar-slogan">
+      耐撕小前端，学习写代码。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/31/19.08.31/">前端，JS递归函数的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/20/19.07.20/">跨域</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/18/19.06.18/">HTML5新特性</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/12/19.05.12-1/">cordova打包vue项目成Android手机app包</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/19.05.12-2/">vue-cli3.0 打包遇到问题总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 nannan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
