@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript 调试 | 楠楠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="JavaScript 调试console.log() 方法12345//console.log() 方法    let a = 5;    let b = 6;    let c = a + b;    console.log(c);   console.log() 方法在调试窗口上打印 JavaScript 值。 设置断点断点调试：断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 调试">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/19.09.22/index.html">
+<meta property="og:site_name" content="楠楠的博客">
+<meta property="og:description" content="JavaScript 调试console.log() 方法12345//console.log() 方法    let a = 5;    let b = 6;    let c = a + b;    console.log(c);   console.log() 方法在调试窗口上打印 JavaScript 值。 设置断点断点调试：断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/19.09.22/001.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/19.09.22/002.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/19.09.22/003.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/19.09.22/004.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/19.09.22/005.jpg">
+<meta property="og:updated_time" content="2019-09-22T08:41:54.026Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 调试">
+<meta name="twitter:description" content="JavaScript 调试console.log() 方法12345//console.log() 方法    let a = 5;    let b = 6;    let c = a + b;    console.log(c);   console.log() 方法在调试窗口上打印 JavaScript 值。 设置断点断点调试：断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/22/19.09.22/001.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="楠楠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-19.09.22" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 调试
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/22/19.09.22/" class="article-date">
+  <time datetime="2019-09-22T08:35:15.078Z" itemprop="datePublished">2019-09-22</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="JavaScript-调试"><a href="#JavaScript-调试" class="headerlink" title="JavaScript 调试"></a>JavaScript 调试</h1><h3 id="console-log-方法"><a href="#console-log-方法" class="headerlink" title="console.log() 方法"></a>console.log() 方法</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//console.log() 方法</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">let</span> c = a + b;</span><br><span class="line">    <span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure></div>
+<p><img src="/2019/09/22/19.09.22/001.jpg" alt="avatar"></p>
+<p> console.log() 方法在调试窗口上打印 JavaScript 值。</p>
+<h3 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h3><p>断点调试：断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打断点，断点调试</span></span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">"2"</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="string">"a"</span>, <span class="string">"a"</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>];</span><br><span class="line">  <span class="keyword">var</span> nullArr = [];</span><br><span class="line">  <span class="comment">//数组的indexOf()方法，Array.indexOf(b) b在Array数组中索引位置，数组中没有则为-1。</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">     <span class="keyword">if</span> (nullArr.indexOf(arr[i]) == <span class="number">-1</span>) &#123;</span><br><span class="line">         nullArr.push(arr[i]);</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  alert(nullArr)</span><br></pre></td></tr></table></figure></div></p>
+<p>1.打断点<br><img src="/2019/09/22/19.09.22/002.jpg" alt="avatar"><br>2.开始调试<br>可以使用快捷键F10每步调试<br><img src="/2019/09/22/19.09.22/003.jpg" alt="avatar"><br>3.检查变量，排除问题<br><img src="/2019/09/22/19.09.22/004.jpg" alt="avatar"></p>
+<h3 id="设debugger-关键字"><a href="#设debugger-关键字" class="headerlink" title="设debugger 关键字"></a>设debugger 关键字</h3><p>debugger： 关键字用于停止执行 JavaScript，并调用调试函数。这个关键字与在调试工具中设置断点的效果是一样的。<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//debugger 关键字</span></span><br><span class="line">  <span class="keyword">debugger</span>;</span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">"2"</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="string">"a"</span>, <span class="string">"a"</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>];</span><br><span class="line">  <span class="keyword">var</span> nullArr = [];</span><br><span class="line">  <span class="comment">//数组的indexOf()方法，Array.indexOf(b) b在Array数组中索引位置，数组中没有则为-1。</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (nullArr.indexOf(arr[i]) == <span class="number">-1</span>) &#123;</span><br><span class="line">          nullArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  alert(nullArr)</span><br></pre></td></tr></table></figure></div></p>
+<p>1.执行代码，会自动停在debugger关键字的位置<br><img src="/2019/09/22/19.09.22/005.jpg" alt="avatar"><br>2.开始调试，同断点调试相近</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/31/19.08.31/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">前端，JS递归函数的使用</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        楠楠小哥哥
+      
+    </h3>
+    <p class="avatar-slogan">
+      耐撕小前端，学习写代码。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/22/19.09.22/">JavaScript 调试</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/31/19.08.31/">前端，JS递归函数的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/20/19.07.20/">跨域</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/18/19.06.18/">HTML5新特性</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/12/19.05.12-1/">cordova打包vue项目成Android手机app包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 nannan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
