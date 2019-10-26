@@ -51,6 +51,53 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-19.10.26" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/26/19.10.26/">Vue3.3更新后打包所遇到问题总结</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/10/26/19.10.26/" class="article-date">
+  <time datetime="2019-10-26T07:10:34.435Z" itemprop="datePublished">2019-10-26</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="Vue3-3更新后打包所遇到问题总结"><a href="#Vue3-3更新后打包所遇到问题总结" class="headerlink" title="Vue3.3更新后打包所遇到问题总结"></a>Vue3.3更新后打包所遇到问题总结</h1><h3 id="vue-config-js文件"><a href="#vue-config-js文件" class="headerlink" title="vue.config.js文件"></a>vue.config.js文件</h3><p>10月份，vue更新vue3.0后，和2.0相比，在cli中，会自动配置好vue.config.js文件，而不用自己去配置index.config.js文件了。具体配置如下：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//基本路径配置，vue.cli 3.3以前使用baseUrl</span></span><br><span class="line">    publicPath: <span class="string">"./"</span>,<span class="comment">//输出的根路径  默认是/ </span></span><br><span class="line">    outputDir: <span class="string">'dist'</span>,<span class="comment">//构建输出目录</span></span><br><span class="line">    assetsDir: <span class="string">''</span>,<span class="comment">//静态资源目录(js,css,img,fonts)</span></span><br><span class="line">    lintOnSave: <span class="literal">false</span>,<span class="comment">//是否开启eslint保存检测,有效值: true || false || 'error'</span></span><br><span class="line">    <span class="comment">// 设置代理理</span></span><br><span class="line">    devServer: &#123;</span><br><span class="line">        open: <span class="literal">true</span>,<span class="comment">//是否自动弹出</span></span><br><span class="line">        host: <span class="string">'localhost'</span>,</span><br><span class="line">        port: <span class="number">8080</span>,<span class="comment">//端口</span></span><br><span class="line">        https: <span class="literal">false</span>,</span><br><span class="line">        hotOnly: <span class="literal">false</span>,<span class="comment">//热更新</span></span><br><span class="line">        proxy: &#123;</span><br><span class="line">            <span class="string">'/api'</span>: &#123;</span><br><span class="line">                target: <span class="string">'http://ss****ai.org'</span>,<span class="comment">//代理地址，这里设置的地址会代替axios中设置的baseURL</span></span><br><span class="line">                <span class="comment">//ws: true,//代理websockets</span></span><br><span class="line">                changeOrigin: <span class="literal">true</span>,</span><br><span class="line">                <span class="comment">//重写之后url为</span></span><br><span class="line">                pathRewrite: &#123;</span><br><span class="line">                    <span class="string">'^/api'</span>: <span class="string">''</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>具体不同体现在基本路径配置，vue.cli 3.3以前使用baseUrl：<br><img src="/2019/10/26/19.10.26/001.png" alt="avatar"></p>
+<h3 id="解决vue-cli3打包代码后，上线服务器后白屏问题"><a href="#解决vue-cli3打包代码后，上线服务器后白屏问题" class="headerlink" title="解决vue-cli3打包代码后，上线服务器后白屏问题"></a>解决vue-cli3打包代码后，上线服务器后白屏问题</h3><p>npm run build后发现，index.html文件打开白屏，问题所在：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="keyword">import</span> Login <span class="keyword">from</span> <span class="string">'./views/login.vue'</span></span><br><span class="line"><span class="keyword">import</span> Nav <span class="keyword">from</span> <span class="string">'./views/nav.vue'</span></span><br><span class="line"><span class="keyword">import</span> Three <span class="keyword">from</span> <span class="string">'./components/three.vue'</span></span><br><span class="line"><span class="keyword">import</span> Six <span class="keyword">from</span> <span class="string">'./components/six.vue'</span></span><br><span class="line"><span class="keyword">import</span> Year <span class="keyword">from</span> <span class="string">'./components/year.vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  <span class="comment">// mode: 'history',</span></span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/'</span>,</span><br><span class="line">      name: <span class="string">'login'</span>,</span><br><span class="line">      component: Login,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/nav'</span>,</span><br><span class="line">      component: Nav,</span><br><span class="line">      <span class="comment">//二级路由</span></span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: <span class="string">'/'</span>,</span><br><span class="line">          name: <span class="string">'three'</span>,</span><br><span class="line">          component: Three,</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div></p>
+<h5 id="注释过-mode-‘history’问题就被解决。"><a href="#注释过-mode-‘history’问题就被解决。" class="headerlink" title="注释过 mode: ‘history’问题就被解决。"></a>注释过 mode: ‘history’问题就被解决。</h5><h5 id="配置路由模式"><a href="#配置路由模式" class="headerlink" title="配置路由模式:"></a>配置路由模式:</h5><p>官网说明：<br>mode</p>
+<p>类型: string</p>
+<p>默认值: “hash” (浏览器环境) | “abstract” (Node.js 环境)</p>
+<p>可选值: “hash” | “history” | “abstract”</p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>hash: 使用 URL hash 值来作路由。支持所有浏览器，包括不支持 HTML5 History Api 的浏览器。</p>
+<p>history: 依赖 HTML5 History API 和服务器配置。附上链接查看 HTML5 History 模式配置.</p>
+<p>abstract: 支持所有 JavaScript 运行环境，如 Node.js 服务器端。如果发现没有浏览器的 API，路由会自动强制进入这个模式。</p>
+<p><a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90" target="_blank" rel="noopener">官网链接</a>.</p>
+<p>终于弄明白了，如果使用history模式上线，必须要服务端在服务器上有对应的模式才能使用history（看上面链接），如果服务器上没有配置，可以先使用默认的hash；history模式链接看起来要美观些</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-19.09.22" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -430,7 +477,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -440,6 +487,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/26/19.10.26/">Vue3.3更新后打包所遇到问题总结</a>
+          </li>
         
           <li>
             <a href="/2019/09/22/19.09.22/">JavaScript 调试</a>
@@ -455,10 +506,6 @@
         
           <li>
             <a href="/2019/06/18/19.06.18/">HTML5新特性</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/12/19.05.12-1/">cordova打包vue项目成Android手机app包</a>
           </li>
         
       </ul>
