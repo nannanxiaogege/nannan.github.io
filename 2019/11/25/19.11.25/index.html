@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JS数据类型，类型转换，堆，栈结构 | 楠楠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="JS数据类型，隐式类型转换，堆，栈结构JS数据类型这个可真的是老生常谈了，非常常见，简单说一下js有7中数据类型 基本类型Boolean 布尔值Null 空Undefined 未定义Number 数字String 字符串Symbol es6新增的一种基本数据类型一种类似于标记的一个数据类型 引用类型（Object）常见有：Object 类型Array 类型Function 类型Date 类型Reg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS数据类型，类型转换，堆，栈结构">
+<meta property="og:url" content="http://yoursite.com/2019/11/25/19.11.25/index.html">
+<meta property="og:site_name" content="楠楠的博客">
+<meta property="og:description" content="JS数据类型，隐式类型转换，堆，栈结构JS数据类型这个可真的是老生常谈了，非常常见，简单说一下js有7中数据类型 基本类型Boolean 布尔值Null 空Undefined 未定义Number 数字String 字符串Symbol es6新增的一种基本数据类型一种类似于标记的一个数据类型 引用类型（Object）常见有：Object 类型Array 类型Function 类型Date 类型Reg">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/11/25/19.11.25/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/25/19.11.25/2.jpg">
+<meta property="og:updated_time" content="2019-11-25T08:59:26.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS数据类型，类型转换，堆，栈结构">
+<meta name="twitter:description" content="JS数据类型，隐式类型转换，堆，栈结构JS数据类型这个可真的是老生常谈了，非常常见，简单说一下js有7中数据类型 基本类型Boolean 布尔值Null 空Undefined 未定义Number 数字String 字符串Symbol es6新增的一种基本数据类型一种类似于标记的一个数据类型 引用类型（Object）常见有：Object 类型Array 类型Function 类型Date 类型Reg">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/25/19.11.25/1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="楠楠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-19.11.25" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      JS数据类型，类型转换，堆，栈结构
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/11/25/19.11.25/" class="article-date">
+  <time datetime="2019-11-25T08:56:01.044Z" itemprop="datePublished">2019-11-25</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="JS数据类型，隐式类型转换，堆，栈结构"><a href="#JS数据类型，隐式类型转换，堆，栈结构" class="headerlink" title="JS数据类型，隐式类型转换，堆，栈结构"></a>JS数据类型，隐式类型转换，堆，栈结构</h1><h2 id="JS数据类型"><a href="#JS数据类型" class="headerlink" title="JS数据类型"></a>JS数据类型</h2><p>这个可真的是老生常谈了，非常常见，简单说一下js有7中数据类型</p>
+<h4 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h4><p>Boolean 布尔值<br>Null 空<br>Undefined 未定义<br>Number 数字<br>String 字符串<br>Symbol es6新增的一种基本数据类型一种类似于标记的一个数据类型</p>
+<h4 id="引用类型（Object）"><a href="#引用类型（Object）" class="headerlink" title="引用类型（Object）"></a>引用类型（Object）</h4><p>常见有：<br>Object 类型<br>Array 类型<br>Function 类型<br>Date 类型<br>RegExp 类型</p>
+<h6 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h6><p>ES6规范引入的一项新特性，它的功能类似于一种标识唯一性的ID。通常情况下，我们可以通过调用Symbol()函数来创建一个Symbol实例：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>()</span><br></pre></td></tr></table></figure></div></p>
+<p>或者，你也可以在调用Symbol()函数时传入一个可选的字符串参数，相当于给你创建的Symbol实例一个描述信息：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>(<span class="string">'另一个 Symbol'</span>)</span><br></pre></td></tr></table></figure></div></p>
+<p>由于Symbol是一种基础数据类型，所以当我们使用typeof去检查它的类型的时候，它会返回一个属于自己的类型symbol，而不是什么string、object之类的：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> s1  <span class="comment">// 'symbol'</span></span><br></pre></td></tr></table></figure></div></p>
+<p>另外，我们需要重点记住的一点是：每个Symbol实例都是唯一的。因此，当你比较两个Symbol实例的时候，将总会返回false：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>()</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>(<span class="string">'another symbol'</span>)</span><br><span class="line"><span class="keyword">let</span> s3 = <span class="built_in">Symbol</span>(<span class="string">'another symbol'</span>)</span><br><span class="line"></span><br><span class="line">s1 === s2 <span class="comment">// false</span></span><br><span class="line">s2 === s3 <span class="comment">// false</span></span><br></pre></td></tr></table></figure></div></p>
+<p>Symbol不能与其他值进行运算，否则会报错<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>(<span class="string">"My Symbol"</span>);</span><br><span class="line"><span class="string">"your symbol is"</span> + s1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TypeError: can't convert symbol to string</span></span><br></pre></td></tr></table></figure></div></p>
+<p>Symbole 可以显式的转为字符串，布尔值，但是不能转为数字<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 转为字符串</span></span><br><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>(<span class="string">"My Symbol"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>(s1) <span class="comment">// "Symbol(My Symbol)"</span></span><br><span class="line">s1.toString() <span class="comment">// "Symbol(My Symbol)"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//转为布尔值</span></span><br><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">Boolean</span>(s1) <span class="comment">//true</span></span><br><span class="line">!s1 <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div></p>
+<h2 id="JS数据隐式类型转换"><a href="#JS数据隐式类型转换" class="headerlink" title="JS数据隐式类型转换"></a>JS数据隐式类型转换</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>+<span class="string">'1'</span>)   <span class="comment">//11</span></span><br></pre></td></tr></table></figure></div>
+<p><img src="/2019/11/25/19.11.25/1.jpg" alt="avatar"><br>如例子所示：不同的数据类型，再进行转换的时候做了什么，什么时候会触发隐式类型转换呢，首先是各种的运算符，比如说 + 或者 ==<br>所以，只要是涉及到不同数据类型需要计算的时候都会触发隐式类型转换。<br><strong>（+）加号运算符</strong>的定义是这样的：<strong>如果其中一个是字符串，另一个也会被转换为字符串，否则两个运算数都被转换为数字。</strong><br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span>+<span class="literal">true</span>)   <span class="comment">//2 (数字2)</span></span><br></pre></td></tr></table></figure></div></p>
+<h4 id="隐式类型中主要有三种转换方式"><a href="#隐式类型中主要有三种转换方式" class="headerlink" title="隐式类型中主要有三种转换方式"></a>隐式类型中主要有三种转换方式</h4><p>将值转为原始值，ToPrimitive()。</p>
+<p>将值转为数字，ToNumber()。</p>
+<p>将值转为字符串，ToString()。</p>
+<p><strong>ToPrimitive()是JS原始值转换算法，在==，排序运算符，加减乘除，在对非原始值进行操作时，都会调用内部的toPrimitive()方法</strong>    该函数形式如下：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">toPrimitive(input,preferedType?)</span><br></pre></td></tr></table></figure></div></p>
+<p> input是输入的值，preferedType是期望转换的类型，他可以是字符串，也可以是数字。</p>
+<pre><code> 如果转换的类型是number，会执行以下步骤：
+
+ 1. 如果input是原始值，直接返回这个值；
+
+ 2. 否则，如果input是对象，调用input.valueOf()，如果结果是原始值，返回结果；
+
+ 3. 否则，调用input.toString()。如果结果是原始值，返回结果；
+
+ 4. 否则，抛出错误。
+
+如果转换的类型是String，会执行以下步骤：
+
+ 1. 如果input是原始值，直接返回这个值；
+
+ 2. 否则，调用input.toString()。如果结果是原始值，返回结果；
+
+ 3.否则，如果input是对象，调用input.valueOf()，如果结果是原始值，返回结果；
+
+ 4. 否则，抛出错误。
+</code></pre><h2 id="js中的堆和栈"><a href="#js中的堆和栈" class="headerlink" title="js中的堆和栈"></a>js中的堆和栈</h2><p> <strong>栈(stack):</strong> 由操作系统自动分配内存空间，自动释放，存储的是基础变量以及一些对象的引用变量，占据固定大小的空间。<br>  <strong>堆(heap):</strong> 由操作系统动态分配的内存，大小不定也不会自动释放，一般由程序员分配释放，也可由垃圾回收机制回收。</p>
+<h4 id="堆和栈传值与传址"><a href="#堆和栈传值与传址" class="headerlink" title="堆和栈传值与传址"></a>堆和栈传值与传址</h4>   <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> b = a;           <span class="comment">//a是obj是堆，b只是拿到的指向[1,2,3,4,5]（堆）的路径</span></span><br><span class="line"><span class="keyword">var</span> c = a[<span class="number">0</span>];       <span class="comment">//a[0]是num是栈</span></span><br><span class="line">alert(b);<span class="comment">//[1,2,3,4,5] </span></span><br><span class="line">alert(c);<span class="comment">//1 </span></span><br><span class="line"><span class="comment">//改变数值         </span></span><br><span class="line">b[<span class="number">4</span>] = <span class="number">6</span>;</span><br><span class="line">c = <span class="number">7</span>;</span><br><span class="line">alert(a[<span class="number">4</span>]);<span class="comment">//6</span></span><br><span class="line">alert(a[<span class="number">0</span>]);<span class="comment">//1</span></span><br></pre></td></tr></table></figure></div>
+<p>以上的例子中可以看出改变b的值时，a的数组也发生了改变；但是改变c的值时，a的数组毫无变化，这个就是传值和传址的区别。<br>因为a是数组（堆），所以它赋予给b的时候传的是栈中的地址（指向a这个数组在堆内存中的地址），而不是直接传的堆内存中的对象，当b发生改变时，也就会根据地址回到a在堆内存中的位置进行修改；而c仅仅是从a在堆内存中获取的一个数据值，并保存在栈中，所以c是直接在栈中修改，并且不能指向a在堆内存中的地址。<br><img src="/2019/11/25/19.11.25/2.jpg" alt="avatar"></p>
+<h2 id="js中的浅拷贝深拷贝"><a href="#js中的浅拷贝深拷贝" class="headerlink" title="js中的浅拷贝深拷贝"></a>js中的浅拷贝深拷贝</h2><h4 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">b[<span class="number">4</span>] = <span class="number">6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//[1,2,3,4,5]</span></span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure></div>
+<p>上边说到堆栈的例子，就是最简单的浅拷贝的例子：<br><strong>对象是引用类型的值，对于引用类型来说，我们将 obj1 赋予 obj2 的时候，我们其实仅仅只是将 obj1 存储在栈堆中的的引用赋予了 obj2 ，而两个对象此时指向的是在堆内存中的同一个数据，所以当我们修改任意一个值的时候，修改的都是堆内存中的数据，而不是引用，所以只要修改了，同样引用的对象的值也自然而然的发生了改变。</strong></p>
+<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p> <strong>1.JSON.stringify()以及JSON.parse()</strong><br> <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> objString = <span class="built_in">JSON</span>.stringify(obj1);</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="built_in">JSON</span>.parse(objString);</span><br><span class="line">obj2.a = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.a);  <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2.a); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure></div></p>
+<p>使用JSON.stringify()以及JSON.parse()它是不可以拷贝 undefined ， function， RegExp 等等类型的</p>
+<p> <strong>2.Object.assign(target, source)</strong><br> <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line">obj2.b = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.b); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2.b); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure></div></p>
+<p>如果对象的属性对应的是其它的引用类型的话，还是只拷贝了引用，修改的话还是会有问题<br> <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不能解决多层对象嵌套的</span></span><br><span class="line"> <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line">obj2.c[<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.c); <span class="comment">// ["a", 5, "c"]</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2.c); <span class="comment">// ["a", 5, "c"]</span></span><br></pre></td></tr></table></figure></div></p>
+<p> <strong>3.第三种方式 递归拷贝</strong><br> <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个深拷贝函数  接收目标target参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个变量</span></span><br><span class="line">    <span class="keyword">let</span> result;</span><br><span class="line">    <span class="comment">// 如果当前需要深拷贝的是一个对象的话</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> target === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果是一个数组的话</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(target)) &#123;</span><br><span class="line">            result = []; <span class="comment">// 将result赋值为一个数组，并且执行遍历</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> target) &#123;</span><br><span class="line">                <span class="comment">// 递归克隆数组中的每一项</span></span><br><span class="line">                result.push(deepClone(target[i]))</span><br><span class="line">            &#125;</span><br><span class="line">         <span class="comment">// 判断如果当前的值是null的话；直接赋值为null</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(target===<span class="literal">null</span>) &#123;</span><br><span class="line">            result = <span class="literal">null</span>;</span><br><span class="line">         <span class="comment">// 判断如果当前的值是一个RegExp对象的话，直接赋值    </span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(target.constructor===<span class="built_in">RegExp</span>)&#123;</span><br><span class="line">            result = target;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="comment">// 否则是普通对象，直接for in循环，递归赋值对象的所有值</span></span><br><span class="line">            result = &#123;&#125;;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> target) &#123;</span><br><span class="line">                result[i] = deepClone(target[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     <span class="comment">// 如果不是对象的话，就是基本数据类型，那么直接赋值</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result = target;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="comment">// 返回最终结果</span></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/10/26/19.10.26/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Vue3.3更新后打包所遇到问题总结</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        楠楠小哥哥
+      
+    </h3>
+    <p class="avatar-slogan">
+      耐撕小前端，学习写代码。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/25/19.11.25/">JS数据类型，类型转换，堆，栈结构</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/26/19.10.26/">Vue3.3更新后打包所遇到问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/22/19.09.22/">JavaScript 调试</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/31/19.08.31/">前端，JS递归函数的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/20/19.07.20/">跨域</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 nannan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
